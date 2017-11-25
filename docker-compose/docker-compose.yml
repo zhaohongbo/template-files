@@ -1,0 +1,16 @@
+version: '3'
+services:
+  redis:
+    image: redis:alpine
+    ports:
+      - 6379:6379
+    volumes:
+      - /home/ubuntu/redis/data:/data
+  mysql:
+    image: mysql
+    ports:
+      - 3306:3306
+    volumes:
+      - /home/ubuntu/mysql/data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: test
